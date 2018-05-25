@@ -8,15 +8,11 @@ const CheckboxYesNo = class {
   }
 
   bindEventListeners () {
-    this.checkbox.addEventListener('change', this.onCheckboxChange.bind(this));
+    this.checkbox.addEventListener('change', this.updateTarget.bind(this));
   }
 
   updateTarget () {
     this.target.value = this.checkbox.checked ? 'yes' : 'no';
-  }
-
-  onCheckboxChange () {
-    this.updateTarget();
   }
 
   static init () {
