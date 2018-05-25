@@ -2,11 +2,14 @@
   "devDependencies": {
     "concurrently": "^3.5.1",
     "cpx": "^1.5.0",
+    "cypress": "^2.1.0",
     "http-server": "^0.11.1",
     "webpack": "^4.8.3",
     "webpack-cli": "^2.1.4"
   },
   "scripts": {
+    "test": "cypress run",
+    "test:open": "cypress open",
     "demo:server": "http-server -c-1 ./demo/",
     "demo:copy": "cpx ./dist/checkbox-yes-no.js ./demo/",
     "dev": "concurrently --raw \"webpack --watch --mode development\" \"yarn demo:server --silent\" \"yarn demo:copy -w\"",
