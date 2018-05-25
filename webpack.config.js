@@ -8,5 +8,16 @@ module.exports = {
     library: 'CheckboxYesNo',
     libraryExport: 'default',
     libraryTarget: 'window'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader'
+        }
+      }
+    ]
   }
 };

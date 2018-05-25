@@ -80,7 +80,7 @@ window["CheckboxYesNo"] =
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nvar CheckboxYesNo = function (checkbox, target) {\n  this.checkbox = document.querySelector(checkbox);\n  this.target = document.querySelector(target);\n\n  this.updateTarget();\n  this.bindEventListeners();\n};\n\nCheckboxYesNo.prototype = {\n  bindEventListeners: function () {\n    this.checkbox.addEventListener('change', this.onCheckboxChange.bind(this));\n  },\n  updateTarget: function () {\n    this.target.value = this.checkbox.checked ? 'yes' : 'no';\n  },\n  onCheckboxChange: function () {\n    this.updateTarget();\n  }\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (CheckboxYesNo);\n\n\n//# sourceURL=webpack://CheckboxYesNo/./src/CheckboxYesNo.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nconst CheckboxYesNo = class {\n  constructor (checkbox, target) {\n    this.checkbox = document.querySelector(checkbox);\n    this.target = document.querySelector(target);\n\n    this.updateTarget();\n    this.bindEventListeners();\n  }\n\n  bindEventListeners () {\n    this.checkbox.addEventListener('change', this.onCheckboxChange.bind(this));\n  }\n\n  updateTarget () {\n    this.target.value = this.checkbox.checked ? 'yes' : 'no';\n  }\n\n  onCheckboxChange () {\n    this.updateTarget();\n  }\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (CheckboxYesNo);\n\n\n//# sourceURL=webpack://CheckboxYesNo/./src/CheckboxYesNo.js?");
 
 /***/ })
 
