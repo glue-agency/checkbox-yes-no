@@ -80,7 +80,7 @@ window["CheckboxYesNo"] =
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nvar CheckboxYesNo = function () {\n  console.log('CheckboxYesNo');\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (CheckboxYesNo);\n\n\n//# sourceURL=webpack://CheckboxYesNo/./src/CheckboxYesNo.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nvar CheckboxYesNo = function (checkbox, target) {\n  this.checkbox = document.querySelector(checkbox);\n  this.target = document.querySelector(target);\n\n  this.updateTarget();\n};\n\nCheckboxYesNo.prototype = {\n  updateTarget: function () {\n    this.target.value = this.checkbox.checked ? 'yes' : 'no';\n  }\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (CheckboxYesNo);\n\n\n//# sourceURL=webpack://CheckboxYesNo/./src/CheckboxYesNo.js?");
 
 /***/ })
 
