@@ -50,4 +50,19 @@ describe('CheckboxYesNo', function () {
         .should('have.value', 'no');
     })
   })
+
+  it('can be initialized with data attributes', function () {
+    // Arrange
+    cy.visit('/');
+
+    // Assert
+    cy.window().then(function (win) {
+      var instance = win.CheckboxYesNo.instances.pop();
+      var checkbox = win.document.querySelector('#checkbox-c');
+      var target = win.document.querySelector('#checkbox-c-target');
+
+      expect(checkbox).equals(checkbox);
+      expect(target).equals(target);
+    })
+  })
 })

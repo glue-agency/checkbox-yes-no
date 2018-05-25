@@ -1,7 +1,7 @@
 const CheckboxYesNo = class {
   constructor (checkbox, target) {
-    this.checkbox = document.querySelector(checkbox);
-    this.target = document.querySelector(target);
+    this.checkbox = checkbox;
+    this.target = target;
 
     this.updateTarget();
     this.bindEventListeners();
@@ -17,6 +17,25 @@ const CheckboxYesNo = class {
 
   onCheckboxChange () {
     this.updateTarget();
+  }
+
+  static init () {
+    CheckboxYesNo.instances = CheckboxYesNo.instances || [];
+
+    let checkboxes = document.querySelectorAll('[data-checkbox-yes-no]');
+
+    checkboxes.forEach(checkbox => {
+      let instance = CheckboxYesNo.newFromCheckboxWithDataAttributes(checkbox);
+
+      CheckboxYesNo.instances.push(instance);
+    });
+  }
+
+  static newFromCheckboxWithDataAttributes (checkbox) {
+    let targetSelector = checkbox.getAttribute('data-checkbox-yes-no');
+    let target = document.querySelector(targetSelector);
+
+    return new CheckboxYesNo(checkbox, target);
   }
 };
 

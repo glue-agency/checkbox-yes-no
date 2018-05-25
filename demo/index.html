@@ -18,10 +18,23 @@ Checkbox A:<br>
 Checkbox B:<br>
 <input type="checkbox" id="checkbox-b" checked><input type="text" id="checkbox-b-target">
 
+<hr>
+Checkbox C:<br>
+<input type="checkbox" id="checkbox-c" data-checkbox-yes-no="#checkbox-c-target"><input type="text" id="checkbox-c-target">
+
 <script src="checkbox-yes-no.js"></script>
 <script>
-new CheckboxYesNo('#checkbox-a', '#checkbox-a-target')
-new CheckboxYesNo('#checkbox-b', '#checkbox-b-target')
+new CheckboxYesNo(
+    document.querySelector('#checkbox-a'),
+    document.querySelector('#checkbox-a-target')
+);
+
+new CheckboxYesNo(
+    document.querySelector('#checkbox-b'),
+    document.querySelector('#checkbox-b-target')
+);
+
+CheckboxYesNo.init()
 </script>
 
 </body>
