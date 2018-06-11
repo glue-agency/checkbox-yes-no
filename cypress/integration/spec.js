@@ -61,8 +61,8 @@ describe('CheckboxYesNo', function () {
       var checkbox = win.document.querySelector('#checkbox-c');
       var target = win.document.querySelector('#checkbox-c-target');
 
-      expect(checkbox).equals(checkbox);
-      expect(target).equals(target);
+      expect(instance.checkbox).equals(checkbox);
+      expect(instance.target).equals(target);
     })
   })
 })
