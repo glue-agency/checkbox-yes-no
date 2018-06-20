@@ -21,13 +21,13 @@ const CheckboxYesNo = class {
     let checkboxes = document.querySelectorAll('[data-checkbox-yes-no]');
 
     checkboxes.forEach(checkbox => {
-      let instance = CheckboxYesNo.newFromCheckboxWithDataAttributes(checkbox);
+      let instance = CheckboxYesNo.newFromDataAttributes(checkbox);
 
       CheckboxYesNo.instances.push(instance);
     });
   }
 
-  static newFromCheckboxWithDataAttributes (checkbox) {
+  static newFromDataAttributes (checkbox) {
     let targetSelector = checkbox.getAttribute('data-checkbox-yes-no');
     let target = document.querySelector(targetSelector);
 
