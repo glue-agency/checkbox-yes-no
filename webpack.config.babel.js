@@ -1,6 +1,6 @@
-var path = require('path');
+import path from 'path';
 
-module.exports = {
+export default {
   entry: './src/CheckboxYesNo.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
