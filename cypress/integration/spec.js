@@ -1,6 +1,6 @@
 describe('CheckboxYesNo', function () {
-  context('when unchecked', function () {
-    it('sets target on page load', function () {
+  context('on page load', function () {
+    it('sets target for unchecked checkbox', function () {
       // Arrange
       cy.visit('/');
 
@@ -11,7 +11,20 @@ describe('CheckboxYesNo', function () {
         .should('have.value', 'no');
     })
 
-    it('updates target when clicking checkbox', function () {
+    it('sets target for checked checkbox', function () {
+      // Arrange
+      cy.visit('/');
+
+      // Act
+
+      // Assert
+      cy.get('#checkbox-b-target')
+        .should('have.value', 'yes');
+    })
+  })
+
+  context('when clicked', function () {
+    it('updates target for unchecked checkbox', function () {
       // Arrange
       cy.visit('/');
 
@@ -23,21 +36,8 @@ describe('CheckboxYesNo', function () {
       cy.get('#checkbox-a-target')
         .should('have.value', 'yes');
     })
-  })
 
-  context('when checked', function () {
-    it('sets target on page load', function () {
-      // Arrange
-      cy.visit('/');
-
-      // Act
-
-      // Assert
-      cy.get('#checkbox-b-target')
-        .should('have.value', 'yes');
-    })
-
-    it('updates target when clicking checkbox', function () {
+    it('updates target for checked checkbox', function () {
       // Arrange
       cy.visit('/');
 
@@ -51,18 +51,22 @@ describe('CheckboxYesNo', function () {
     })
   })
 
-  it('can be initialized with data attributes', function () {
-    // Arrange
-    cy.visit('/');
+  context('when initialized via data attributes', function () {
+    it('creates an instance with the right elements', function () {
+      // Arrange
+      cy.visit('/');
 
-    // Assert
-    cy.window().then(function (win) {
-      var instance = win.CheckboxYesNo.instances.pop();
-      var checkbox = win.document.querySelector('#checkbox-c');
-      var target = win.document.querySelector('#checkbox-c-target');
+      // Act
 
-      expect(instance.checkbox).equals(checkbox);
-      expect(instance.target).equals(target);
+      // Assert
+      cy.window().then(function (win) {
+        var instance = win.CheckboxYesNo.instances.pop();
+        var checkbox = win.document.querySelector('#checkbox-c');
+        var target = win.document.querySelector('#checkbox-c-target');
+
+        expect(instance.checkbox).equals(checkbox);
+        expect(instance.target).equals(target);
+      })
     })
   })
 })
