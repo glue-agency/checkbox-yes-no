@@ -1,4 +1,4 @@
-import path from 'path';
+import path from 'path'
 
 export default {
   entry: './src/CheckboxYesNo.js',
@@ -20,4 +20,4 @@ export default {
       }
     ]
   }
-};
+}

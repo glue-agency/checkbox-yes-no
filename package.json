@@ -6,11 +6,18 @@
     "concurrently": "^3.5.1",
     "cpx": "^1.5.0",
     "cypress": "^2.1.0",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
     "http-server": "^0.11.1",
     "webpack": "^4.8.3",
     "webpack-cli": "^2.1.4"
   },
   "scripts": {
+    "lint": "eslint .",
     "test": "cypress run",
     "test:open": "cypress open",
     "demo:server": "http-server -c-1 ./demo/",
